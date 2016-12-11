@@ -1,0 +1,11 @@
+//Марки коли
+select * from VehicleModelYear where make = 'Ford';
+select distinct make from VehicleModelYear; -> Намират се марките коли така 
+select distinct model from VehicleModelYear where make='Ford'; -> листват се всички марки коли
+
+//Потребител
+Име, възраст, Локация, пол 
+
+//Мнения
+текст, дата, КОЛА(връзка към таблицата коли), +оценки, -оценки, Потребител (връзка към таблицата потребител),  
+
