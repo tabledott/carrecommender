@@ -8,10 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CarModelMarksController {
 
-    private final AtomicLong counter = new AtomicLong();
-
-    @RequestMapping("/listmarks")
+    @RequestMapping("/listmodels")
     public CarModelMarks greeting(@RequestParam(value="name", defaultValue="Ford") String mark) {
+    	
         return new CarModelMarks(mark);
     }
 }

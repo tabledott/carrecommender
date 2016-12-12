@@ -5,16 +5,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.sql.DataSource;
 
-public class CarModelMarksDaoJDBC {
+public class CarModelMarksDaoJDBC implements CarModelMarksDao {
 	private DataSource dataSource;
 
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
+	
+	public void insert(){
+		
+	}
+	
+	/*
+	public void insert(DataSource customer){
 
-	public void insert(Customer customer){
-
-		String sql = "INSERT INTO CUSTOMER " +
+		String sql = "UPDATE INTO CUSTOMER " +
 				"(CUST_ID, NAME, AGE) VALUES (?, ?, ?)";
 		Connection conn = null;
 
@@ -38,10 +43,11 @@ public class CarModelMarksDaoJDBC {
 			}
 		}
 	}
+	*/
+	public CarModelMarks findCarModelsByMark(String mark){
 
-	public CarModelMarks findByCustomerId(String mark){
-
-		String sql = "SELECT * FROM VehicleModelYear WHERE MARK= ?";
+		//'
+		String sql = "select distinct model from VehicleModelYear where make= ?";
 
 		Connection conn = null;
 
@@ -52,15 +58,13 @@ public class CarModelMarksDaoJDBC {
 			CarModelMarks marks = new CarModelMarks(mark);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
-				customer = new Customer(
-					rs.getInt("CUST_ID"),
-					rs.getString("NAME"),
-					rs.getInt("Age")
-				);
+				String model = rs.toString();
+				System.out.println("model = " + model);
+				marks.getModels().push(model);
 			}
 			rs.close();
 			ps.close();
-			return customer;
+			return marks;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		} finally {
