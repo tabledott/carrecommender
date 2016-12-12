@@ -1,4 +1,4 @@
-package hello;
+package modelmarkspackage;
 
 public class Greeting {
 
