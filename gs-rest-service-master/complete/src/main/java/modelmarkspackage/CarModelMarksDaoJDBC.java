@@ -57,11 +57,12 @@ public class CarModelMarksDaoJDBC implements CarModelMarksDao {
 			ps.setString(1, mark);
 			CarModelMarks marks = new CarModelMarks(mark);
 			ResultSet rs = ps.executeQuery();
-			if (rs.next()) {
-				String model = rs.toString();
+			while (rs.next()) {
+				String model = rs.getString(1);
 				System.out.println("model = " + model);
 				marks.getModels().push(model);
 			}
+			
 			rs.close();
 			ps.close();
 			return marks;

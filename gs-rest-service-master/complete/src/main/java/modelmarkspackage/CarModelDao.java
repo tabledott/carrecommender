@@ -8,13 +8,13 @@ import java.sql.SQLException;
 import javax.sql.DataSource;
 
 public class CarModelDao {
-	private DataSource dataSource;
+	private static DataSource dataSource;
 
 	public void setDataSource(DataSource dataSource) {
-		this.dataSource = dataSource;
+		CarModelDao.dataSource = dataSource;
 	}
 	
-	public CarModel listAllCarModels(){
+	public static CarModel listAllCarModels(){
 
 		String sql = "select distinct make from VehicleModelYear;";
 
