@@ -10,10 +10,8 @@ public class Application {
 
     public static void main(String[] args) {
         
-    	ApplicationContext context =
-        		new ClassPathXmlApplicationContext( "Spring-Module.xml" );
-    	
-            CarModelMarksDao carModelDAO = (CarModelMarksDao) context.getBean("carModelMarksDao");
+    	    	
+            /*CarModelMarksDao carModelDAO = (CarModelMarksDao) context.getBean("carModelMarksDao");
             //Customer customer = new Customer(1, "mkyong",28);
             //customerDAO.insert(customer);
 
@@ -21,7 +19,7 @@ public class Application {
             System.out.println("Marks are: ");
             for(int i = 0; i < cars1.getModels().size(); i++){
             	System.out.println(cars1.getModels().get(i));
-            }
+            }*/
 
         SpringApplication.run(Application.class, args);
     }

@@ -14,7 +14,7 @@ public class CarModelDao {
 		CarModelDao.dataSource = dataSource;
 	}
 	
-	public static CarModel listAllCarModels(){
+	public static CarModel listAllCarMake(){
 
 		String sql = "select distinct make from VehicleModelYear;";
 
@@ -26,9 +26,9 @@ public class CarModelDao {
 			CarModel marks = new CarModel();
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
-				String model = rs.getString("MODEL");
-				System.out.println("model = " + model);
-				marks.getModels().push(model);
+				String make = rs.getString("make");
+				System.out.println("make = " + make);
+				marks.getModels().push(make);
 			}
 			rs.close();
 			ps.close();

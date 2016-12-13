@@ -7,7 +7,4 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
-	<bean id="carModelDao" class="modelmarkspackage.CarModelDao">
-		<property name="dataSource" ref="dataSource" />
-	</bean>
 </beans>
