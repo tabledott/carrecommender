@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CarModelController {
-    @RequestMapping("/listmakes")
-    public CarModel listMakes() {
+public class CarMarksController {
+    @RequestMapping("/listmarks")
+    public CarModel listMarks() {
     	
     	ApplicationContext context =
         		new ClassPathXmlApplicationContext( "Spring-Module.xml" );

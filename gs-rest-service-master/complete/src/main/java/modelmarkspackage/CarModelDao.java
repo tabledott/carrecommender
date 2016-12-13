@@ -25,7 +25,7 @@ public class CarModelDao {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			CarModel marks = new CarModel();
 			ResultSet rs = ps.executeQuery();
-			if (rs.next()) {
+			while (rs.next()) {
 				String make = rs.getString("make");
 				System.out.println("make = " + make);
 				marks.getModels().push(make);
