@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 package hello;
-
+/*
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -36,6 +36,7 @@ public class GreetingControllerTests {
     @Autowired
     private MockMvc mockMvc;
 
+   
     @Test
     public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
 
@@ -50,5 +51,6 @@ public class GreetingControllerTests {
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(jsonPath("$.content").value("Hello, Spring Community!"));
     }
-
+	
 }
+*/
