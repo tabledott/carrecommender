@@ -17,7 +17,6 @@ public class CarModelDao {
 	public static CarModel listAllCarMake(){
 
 		String sql = "select distinct make from VehicleModelYear;";
-
 		Connection conn = null;
 
 		try {
@@ -27,7 +26,6 @@ public class CarModelDao {
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				String make = rs.getString("make");
-				System.out.println("make = " + make);
 				marks.getModels().push(make);
 			}
 			rs.close();
@@ -38,8 +36,8 @@ public class CarModelDao {
 		} finally {
 			if (conn != null) {
 				try {
-				conn.close();
-				} catch (SQLException e) {}
+					conn.close();
+				} catch (SQLException e){}
 			}
 		}
 	}
